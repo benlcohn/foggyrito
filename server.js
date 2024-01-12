@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var passport = require('passport');
 var methodOverride = require('method-override');
 
 require('dotenv').config();
@@ -30,6 +31,18 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+// Instead of having to pass req.user every time we render a template, 
+// let’s take advantage of Express’ res.locals object and a tidy custom 
+// middleware function:
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
