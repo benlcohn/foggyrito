@@ -1,0 +1,3 @@
+exports.restaurants = [
+{name: '', address: '', }
+];

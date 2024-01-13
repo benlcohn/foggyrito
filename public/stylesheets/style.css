@@ -1,8 +1,32 @@
 body {
+  background-image: url("../images/tortilla.png");
+  background-color: tan;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+table thead th {
+  padding: 20px;
+}
+
+.splash {
+  justify-content: center;
+  max-height: 75%;
+  max-width: 75%;
+  opacity: .6;
+}
+
+.login {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
 }

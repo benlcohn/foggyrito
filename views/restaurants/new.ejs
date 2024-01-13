@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+<form is="new-form" action="/restaurants" method="POST">
+    <label>Restaurant</label>
+    <input type="text" name="restaurant">
+    
+    <label>Address</label>
+    <input type="text" name="address"
+    
+    <label for="proteins">Choose a car:</label>
+    <select id="proteins" name="proteins" size="6" multiple>
+        <option value="carneAsada">Carne Asada</option>
+        <option value="carnitas">Carnitas</option>
+        <option value="chicken">Chicken</option>
+        <option value="pastor">Al Pastor</option>
+        <option value="seafood">Seafood</option>
+        <option value="veggie">Veggie</option>
+    </select>
+</form>
