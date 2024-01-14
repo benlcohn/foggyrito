@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const restaurantsCtrl = require('../ghost/restaurants');
+const restaurantsCtrl = require('../controllers/restaurants');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 
