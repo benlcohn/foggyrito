@@ -1,19 +1,26 @@
-<%- include('partials/header') %>
+<%- include("../partials/header") %>
 
 <form is="new-form" action="/restaurants" method="POST">
     <label>Restaurant</label>
     <input type="text" name="restaurant">
     
-    <label>Address</label>
-    <input type="text" name="address"
-    
-    <label for="proteins">Choose a car:</label>
-    <select id="proteins" name="proteins" size="6" multiple>
-        <option value="carneAsada">Carne Asada</option>
-        <option value="carnitas">Carnitas</option>
-        <option value="chicken">Chicken</option>
-        <option value="pastor">Al Pastor</option>
-        <option value="seafood">Seafood</option>
-        <option value="veggie">Veggie</option>
+    <label>Neighborhood</label>
+    <select name="neighborhood">
+        <option value="Mission">Mission</option>
+        <option value="The Richmond">The Richmond</option>
+        <option value="Sunset">Sunset</option>
+
     </select>
+    <p>
+    <label for="proteins">Proteins offered:</label>
+    <label for="p1"> <input type="checkbox" name="protein" value="red" id="p1">Carne Asada</label>
+    <label for="p2"><input type="checkbox" name="protein" value="green" id="p2">Chicken</label>
+    <label for="p3"><input type="checkbox" name="protein" value="blue" id="p3">Pastor</label>
+    </p>
+
+    <label>Do they Super?</label>
+    <input type="checkbox" name="super" checked>
+    <input type="submit" value="Add Restaurant"
 </form>
+
+<%- include("../partials/footer") %>
