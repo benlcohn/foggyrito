@@ -1,9 +1,12 @@
 <%- include("../partials/header") %>
 
-<form is="new-form" action="/restaurants" method="POST">
+<form is="new-form" action="/restaurants/search" method="GET">
     <label>Restaurant</label>
     <input type="text" name="restaurant">
-    
+    <button>Search</button>
+    </form>
+    <br>
+<form is="new-form" action="/restaurants" method="POST">    
     <label>Neighborhood</label>
     <select name="neighborhood">
         <option value="Mission">Mission</option>

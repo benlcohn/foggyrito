@@ -3,6 +3,8 @@ const Restaurant = require('../models/restaurant')
 module.exports = {
     index,
     new: newRestaurant,
+    create,
+    searchAPI
 };
 
 async function index(req, res) {
@@ -15,21 +17,17 @@ function newRestaurant(req, res) {
 }
 
 async function create(req, res) {
-    const restaurant = await Restaurant.findById(req.params.id);
-
-    for (let key in req.body) {
-        if (req.body[key] === '') delete req.body[key];
-    }
-
-    req.body.user = req.user._id;
-    req.body.userName = req.user.name;
-    req.body.userAvatar = req.user.avatar;
-
+    const restaurant = new Restaurant(req.body);
+    restaurant.user = req.user._id;
     try {
-        const restaurant = await Restaurant.create(req.body);
-        res.redirect(`/restaurants/${restaurant.id}`, { title: 'New Restaurant', restaurant });
+        await restaurant.save();
+        res.redirect(`/restaurants/${restaurant.id}`);
     } catch (err) {
         console.log(err);
         res.render('restaurants/new', { errorMsg: err.message });
     }
+}
+
+async function searchAPI(req, res) {
+
 }
