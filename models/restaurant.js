@@ -28,9 +28,18 @@ const restaurantSchema = new Schema({
         required: true 
      },
     
-    address: { 
-        type: String, 
+    neighborhood: { 
+        type: String,
+        enum: ['Mission', 'The Richmond', 'Sunset'],
         required: true 
+    },
+
+    proteins: [{
+        type: String,
+    }],
+    
+    super: {
+        type: Boolean,
     }
 }, {
     timestamps: true

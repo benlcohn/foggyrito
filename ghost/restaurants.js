@@ -17,14 +17,18 @@ function newRestaurant(req, res) {
 }
 
 async function create(req, res) {
+    req.body.super = !!req.body.super;
+    const proteins = [];
+    proteins.push(!!req.body.protein1, !!req.body.protein2, !!req.body.protein3);
+    req.body.proteins = proteins;
+    req.body.user = req.user._id;
     const restaurant = new Restaurant(req.body);
-    restaurant.user = req.user._id;
     try {
         await restaurant.save();
-        res.redirect(`/restaurants/${restaurant.id}`);
+        res.redirect(`/restaurants`);
     } catch (err) {
         console.log(err);
-        res.render('restaurants/new', { errorMsg: err.message });
+        res.render('restaurants/new', { errorMsg: err.message, title: 'Add Restaurant' });
     }
 }
 

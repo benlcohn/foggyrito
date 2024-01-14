@@ -1,12 +1,8 @@
 <%- include("../partials/header") %>
 
-<form is="new-form" action="/restaurants/search" method="GET">
-    <label>Restaurant</label>
-    <input type="text" name="restaurant">
-    <button>Search</button>
-    </form>
-    <br>
 <form is="new-form" action="/restaurants" method="POST">    
+    <label>Restaurant</label>
+    <input type="text" name="name">
     <label>Neighborhood</label>
     <select name="neighborhood">
         <option value="Mission">Mission</option>
@@ -16,14 +12,14 @@
     </select>
     <p>
     <label for="proteins">Proteins offered:</label>
-    <label for="p1"> <input type="checkbox" name="protein" value="red" id="p1">Carne Asada</label>
-    <label for="p2"><input type="checkbox" name="protein" value="green" id="p2">Chicken</label>
-    <label for="p3"><input type="checkbox" name="protein" value="blue" id="p3">Pastor</label>
+    <label for="p1"> <input type="checkbox" name="protein1" value="Carne Asada" id="p1">Carne Asada</label>
+    <label for="p2"><input type="checkbox" name="protein2" value="Chicken" id="p2">Chicken</label>
+    <label for="p3"><input type="checkbox" name="protein3" value="Pastor" id="p3">Pastor</label>
     </p>
 
     <label>Do they Super?</label>
     <input type="checkbox" name="super" checked>
-    <input type="submit" value="Add Restaurant"
+    <input type="submit" value="Add Restaurant">
 </form>
 
 <%- include("../partials/footer") %>
