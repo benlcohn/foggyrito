@@ -4,17 +4,17 @@
   <thead>
     <tr>
       <th>Restaurant  |--</th>
-      <th>--|  Rating</th>
+      <th>--|  Neigborhood</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% restaurants.forEach(function(r) { %>
       <tr>
-        <td><%= r.restaurant %></td>
-        <td><%= r.rating %></td>
+        <td><%= r.name %></td>
+        <td><%= r.neighborhood %></td>
         <td><%= r.address %></td>
-        <td><a href="/restaurants/<%= r._id %>">Read<br>Reviews</a></td>
+        <td><a href="/restaurants/<%= r._id %>">Details</a></td>
       </tr>
       <% }); %>
     </tbody>

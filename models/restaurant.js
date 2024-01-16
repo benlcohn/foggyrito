@@ -40,6 +40,11 @@ const restaurantSchema = new Schema({
     
     super: {
         type: Boolean,
+    },
+
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User' 
     }
 }, {
     timestamps: true
