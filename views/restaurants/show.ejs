@@ -1,22 +1,25 @@
 <%- include('../partials/header') %>
 
-<section id="show-page"
+<section id="show-page">
     <div><%= restaurant.name %></div>
+    <div><%= restaurant.address %></div>
     <div>Neighborhood: </div>
     <div><%= restaurant.neighborhood %></div>
     <div>Proteins: </div>
     <div><%= restaurant.proteins %></div>
     <div>Super: </div>
     <div><%= restaurant.super ? 'Always!' : 'Nuh-uh' %></div>
+    <img class="restaurant-image" src="<%= restaurant.image %>"> </img>
     </section>
 
 
 <h1>Add a Review</h1>
-<form is="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
+<form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
     <label>Review:</label>
     <textarea name="content"></textarea>
+    <br>
     <label>Rating:</label>
-    <select name="rating">
+    <select class="review-rating" name="rating">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

@@ -25,6 +25,10 @@ async function create(req, res) {
     proteins.push(!!req.body.protein1, !!req.body.protein2, !!req.body.protein3);
     req.body.proteins = proteins;
     req.body.user = req.user._id;
+
+    const r = await Restaurant.findOne({ address: req.body.address });
+    if (r) return res.redirect(`/restaurants/${r._id}`);
+
     const restaurant = new Restaurant(req.body);
     try {
         await restaurant.save();
