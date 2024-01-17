@@ -1,7 +1,9 @@
 const Restaurant = require('../models/restaurant')
+const ROOT_URL = 'https://api.yelp.com/v3/businesses/search?term=';
 
 module.exports = {
     index,
+    show,
     new: newRestaurant,
     create,
     searchAPI
@@ -13,7 +15,8 @@ async function index(req, res) {
 };
 
 function newRestaurant(req, res) {
-    res.render('restaurants/new', { title: 'Add Restaurant', errorMsg: ''});
+    const restaurant = null
+    res.render('restaurants/new', { title: 'Add Restaurant', restaurant, errorMsg: ''});
 }
 
 async function create(req, res) {
@@ -32,6 +35,23 @@ async function create(req, res) {
     }
 }
 
-async function searchAPI(req, res) {
-
+async function show(req, res) {
+    const restaurant = await Restaurant.findById(req.params.id);
+    res.render('restaurants/show', { title: 'Restaurant Detail', restaurant });
 }
+
+async function searchAPI(req, res) {
+    const options = {
+      method: 'GET',
+      headers: {
+          accept: 'application/json',
+          Authorization: `Bearer ${process.env.YELP_API_KEY}`
+      }
+    };
+    console.log(req.query.search)
+    const restaurant = await fetch(`${ROOT_URL}/${req.query.search}&location=SF&limit=1`, options)
+    .then(res => res.json());
+    console.log(restaurant);
+
+    res.render('restaurants/new', { restaurant: restaurant.businesses[0], title: 'Add Restaurant' });
+  }

@@ -9,7 +9,9 @@ router.get('/', restaurantsCtrl.index);
 // GET /restaurants/new
 router.get('/new', ensureLoggedIn, restaurantsCtrl.new);
 // GET 
-router.get('/search', ensureLoggedIn, restaurantsCtrl.searchAPI)
+router.get('/search', ensureLoggedIn, restaurantsCtrl.searchAPI);
+// GET for unique restaurant id
+router.get('/:id', restaurantsCtrl.show);
 // POST
 router.post('/', ensureLoggedIn, restaurantsCtrl.create);
 

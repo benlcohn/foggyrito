@@ -19,7 +19,7 @@ const reviewSchema = new Schema({
     userName: String,
     userAvatar: String
 }, {
-    timeStamps: true
+    timestamps: true
 })
 
 const restaurantSchema = new Schema({
@@ -27,6 +27,14 @@ const restaurantSchema = new Schema({
         type: String, 
         required: true 
      },
+
+    address: {
+        type: String,
+    },
+
+    image: {
+        type: String,
+    },
     
     neighborhood: { 
         type: String,
@@ -45,7 +53,9 @@ const restaurantSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User' 
-    }
+    },
+
+    reviews: [reviewSchema]
 }, {
     timestamps: true
 });

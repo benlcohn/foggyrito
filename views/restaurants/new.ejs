@@ -1,9 +1,28 @@
 <%- include("../partials/header") %>
 
-<form is="new-form" action="/restaurants" method="POST">    
-    <label>Restaurant</label>
-    <input type="text" name="name">
+<form id="yelp-search" action="/restaurants/search" method="GET">
+<label>Restaurant</label>
+<input type="text" name="search">
+<button type="submit">Search</button>
+</form>
+
+<form id="new-form" action="/restaurants" method="POST">
+    <% if (restaurant){ %>
+        <p>
+            <%= restaurant.name %>
+        </p>
+        <input type="hidden" value="<%= restaurant.name %>" name="name">
+        <p>
+            <%= restaurant.location.address1 %>
+        </p>
+        <input type="hidden" value="<%= restaurant.location.address1 %>" name="address">
+        <img src="<%= restaurant.image_url %>">
+        <input type="hidden" value="<%= restaurant.image_url %>" name="image">
+        <% console.log(restaurant.location) %>
+    <% } %>
+    
     <label>Neighborhood</label>
+    <br>
     <select name="neighborhood">
         <option value="Mission">Mission</option>
         <option value="The Richmond">The Richmond</option>
