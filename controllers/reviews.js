@@ -45,12 +45,12 @@ async function update(req, res) {
 
     if (!reviewSubdoc.user.equals(req.user._id)) return res.redirect(`/restaurants/${restaurant._id}`);
     // Update the text in review
-    review.Subdoc.text = req.body.text;
+    reviewSubdoc.content = req.body.content;
     try {
         await restaurant.save();
     } catch (err) {
         console.log(err.message);
     }
     // Redirect back to show view
-    res.redirect(`/restaurants/${restaurants._id}`);
+    res.redirect(`/restaurants/${restaurant._id}`);
 }

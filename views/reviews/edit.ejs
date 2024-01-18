@@ -2,8 +2,8 @@
 
 <h1>Edit Review</h1>
 
-    <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
-        <input name="text" value="<%= review.text %>">
+    <form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+        <input name="content" value="<%= review.content %>">
         <button type="submit">UPDATE REVIEW</button>
     </form>
 

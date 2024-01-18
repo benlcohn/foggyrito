@@ -21,9 +21,7 @@ function newRestaurant(req, res) {
 
 async function create(req, res) {
     req.body.super = !!req.body.super;
-    const proteins = [];
-    proteins.push(!!req.body.protein1, !!req.body.protein2, !!req.body.protein3);
-    req.body.proteins = proteins;
+        console.log(req.body);
     req.body.user = req.user._id;
 
     const r = await Restaurant.findOne({ address: req.body.address });

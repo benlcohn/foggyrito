@@ -6,7 +6,11 @@
     <div>Neighborhood: </div>
     <div><%= restaurant.neighborhood %></div>
     <div>Proteins: </div>
-    <div><%= restaurant.proteins %></div>
+    <div><% restaurant.proteins.forEach(function(p){ %>
+      <%= p %>
+    <% }) %>
+    
+    </div>
     <div>Super: </div>
     <div><%= restaurant.super ? 'Always!' : 'Nuh-uh' %></div>
     <img class="restaurant-image" src="<%= restaurant.image %>"> </img>
@@ -54,8 +58,11 @@
                 <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                   <button type="submit">X</button>
                 </form>
-                <button onClick="location.href='/restaurants/<%= restaurant._id %>/reviews/<%= r._id %>/edit'">EDIT REVIEW</form>
-              <% } %>
+
+                <a href="/restaurants/<%= restaurant._id %>/reviews/<%= r._id %>/edit">
+                  <button>EDIT REVIEW</button>
+                </a>
+                <% } %>
             </td>
           </tr>
         <% }); %>

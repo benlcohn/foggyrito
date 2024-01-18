@@ -53,8 +53,8 @@ input[type=submit]:hover {
 
 .splash {
   justify-content: center;
-  max-height: 75%;
-  max-width: 75%;
+  max-height: 90%;
+  max-width: 100%;
   opacity: .6;
 }
 
@@ -72,3 +72,4 @@ input[type=submit]:hover {
 .review-rating {
   justify-content: right;
 }
+
