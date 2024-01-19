@@ -1,7 +1,12 @@
+* {
+  box-sizing: border-box;
+  color: #424748;
+}
 
 .restaurant-image {
-  max-width: 50%;
-  padding: 10px;
+  max-width: 30%;
+  border: 5px solid rgba(165, 42, 42, 0.778);
+  border-radius: 10px;
 }
 
 body {
@@ -11,12 +16,21 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-nav {
-  background-color: rgba(82, 82, 70, 0.296);
+body > nav {
+  background: rgb(131,58,180);
+  background: linear-gradient(354deg, rgba(16, 7, 22, 0.8) 0%, rgba(135, 16, 16, 0.71) 50%, rgba(167, 116, 45, 0.82) 100%);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  margin-bottom: 2rem;
 }
 
-a {
-  color: #00b7ff;
+#reviews {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 1rem;
 }
 
 table thead th {
@@ -24,7 +38,6 @@ table thead th {
 }
 
 form {
- input[type=text], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -34,11 +47,37 @@ form {
   box-sizing: border-box;
 }
 
+#new-form {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 20rem));
+  /* grid-template-columns: auto auto; */
+}
+
+#new-form input {
+  grid-column-start: 2;
+  border-radius: 5px;
+}
+
+label[for="proteins"] {
+  grid-column: span 2;
+}
+
+/* #new-form label {
+  grid-column-start: 1;
+  border-radius: 5px;
+} */
+
+#new-form * {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
 
 input[type=submit] {
   width: 100%;
-  background-color: #04AA6D;
-  color: white;
+  background-color: rgba(165, 104, 42, 0.778);
+  color: black;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -47,22 +86,35 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
-}
+  background-color: #b76b00ab;
 }
 
 .splash {
-  justify-content: center;
-  max-height: 90%;
-  max-width: 100%;
-  opacity: .6;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 50%;
+  max-width: 50%;
+  opacity: .8;
+  padding: 30px 0 0 0;
+  border-radius: 10px;
 }
 
-.login {
+.login, .logout {
   display: flex;
   justify-content: right;
-  align-items: center;
   height: 34px;
+}
+
+nav>a {
+  margin: 10px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+a {
+  color: pink;
 }
 
 .login img {
@@ -73,3 +125,23 @@ input[type=submit]:hover {
   justify-content: right;
 }
 
+#show-page {
+  display: flex;
+  align-items: center;
+}
+
+#show-page article {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
+#show-page article label {
+  font-weight: bold;
+}
+
+#add-review-form textarea {
+  width: 60vw;
+  height: 10rem;
+}
