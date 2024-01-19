@@ -1,8 +1,10 @@
 # < FOGGYRITO >
-INSERT DESCRIPTION HERE
+Foggyrito is a 
 
 # Screenshot
 <img src="planning/foggyritoscreenshot.png">
+<img src="planning/foggyritoscreenshot1.png">
+<img src="planning/foggyritoscreenshot2.png">
 
 # Technologies Used
 
@@ -16,4 +18,4 @@ INSERT DESCRIPTION HERE
 
 [Click to View Project Planning](https://trello.com/b/QNGsbssY/foggyrito)
 
-[Click to explore Rate the Course!](https://foggyrito-4b7695cb1b55.herokuapp.com/)
+[Click to explore Foggyrito!](https://foggyrito-4b7695cb1b55.herokuapp.com/)
