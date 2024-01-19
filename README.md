@@ -2,7 +2,7 @@
 Foggyrito is a website designed to let its users create detailed reviews of the best burritos in their city!  Instead of writing and reading generalized ratings/opinions about restaurants, Foggyrito hones in on the most important pieces of information you need to know for your *burrito* specific cravings: What kinds of protein do they offer, what neighborhood is it in, do they SUPER their burritos?  They better...
 
 # Screenshot
-<img src="https://drive.google.com/file/d/1QchH-_HZ6EYOAN33mIK7bLXmXhN8Ns4Y/view?usp=sharing">
+<img src="https://imgur.com/YT7nVws.png">
 
 # Technologies Used
 
