@@ -3,20 +3,20 @@
 <table id="list">
   <thead>
     <tr>
-      <th>Restaurants:  |--</th>
-      <th> --|  Neigborhood</th>
+      <th>Restaurants: |--</th>
+      <th> --| Neigborhood</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% restaurants.forEach(function(r) { %>
-      <tr>
-        <td><%= r.name %></td>
-        <td><%= r.neighborhood %></td>
-        <td><a id="details" href="/restaurants/<%= r._id %>">Details</a></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
-  
+    <tr>
+      <td><%= r.name %></td>
+      <td><%= r.neighborhood %></td>
+      <td><a id="details" href="/restaurants/<%= r._id %>">Details</a></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
 <%- include('../partials/footer') %>

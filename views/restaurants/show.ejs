@@ -2,7 +2,7 @@
 
 <section id="show-page">
   <img class="restaurant-image" src="<%= restaurant.image %>"> </img>
-  
+
   <article>
     <label>Restaurant: </label>
     <div><%= restaurant.name %></div>
@@ -20,60 +20,60 @@
 
 <h1>Add a Review</h1>
 <form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
-    <label>Review:</label>
-    <br>
-    <textarea name="content"></textarea>
-    <br>
-    <label>Rating:</label>
-    <select class="review-rating" name="rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5" selected>5</option>
-      </select>
-      <input type="submit" value="Add Review">
+  <label>Review:</label>
+  <br>
+  <textarea name="content"></textarea>
+  <br>
+  <label>Rating:</label>
+  <select class="review-rating" name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <input type="submit" value="Add Review">
 </form>
 
 <% if (restaurant.reviews.length) { %>
-    <section id="reviews">
-          <div>User</div>
-          <div>Date</div>
-          <div>Review</div>
-          <div>Rating</div>
-          <div></div>
-        <% let total = 0 %>
-        <% restaurant.reviews.forEach(function(r) { %>
-          <% total += r.rating %>
-            <div class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><br><%= r.userName %></div>
-            <div><%= r.createdAt.toLocaleDateString() %></div>
-            <div><%= r.content %></div>
-            <div><%= r.rating %></div>
-            <div>
-              <% if (user?._id.equals(r.user)) { %>
-                <div>
-                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                  </form>
+<section id="reviews">
+  <div>User</div>
+  <div>Date</div>
+  <div>Review</div>
+  <div>Rating</div>
+  <div></div>
+  <% let total = 0 %>
+  <% restaurant.reviews.forEach(function(r) { %>
+  <% total += r.rating %>
+  <div class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer"><br><%= r.userName %></div>
+  <div><%= r.createdAt.toLocaleDateString() %></div>
+  <div><%= r.content %></div>
+  <div><%= r.rating %></div>
+  <div>
+    <% if (user?._id.equals(r.user)) { %>
+    <div>
+      <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+        <button type="submit">X</button>
+      </form>
 
-                  <a href="/restaurants/<%= restaurant._id %>/reviews/<%= r._id %>/edit">
-                    <button>EDIT REVIEW</button>
-                  </a>
-                </div>
-              <% } else { %>
-                <div></div>    
-              <% } %>
-            </div>
-        <% }); %>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div><strong><%= (total / restaurant.reviews.length).toFixed(1) %></strong></div>
-      </tbody>
-    </section>
-  <% } else { %>
-    <h5>No Reviews Yet</h5>
-  <% } %>
+      <a href="/restaurants/<%= restaurant._id %>/reviews/<%= r._id %>/edit">
+        <button>EDIT REVIEW</button>
+      </a>
+    </div>
+    <% } else { %>
+    <div></div>
+    <% } %>
+  </div>
+  <% }); %>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div><strong><%= (total / restaurant.reviews.length).toFixed(1) %></strong></div>
+  </tbody>
+</section>
+<% } else { %>
+<h5>No Reviews Yet</h5>
+<% } %>
 
 
 <%- include('../partials/footer') %>
