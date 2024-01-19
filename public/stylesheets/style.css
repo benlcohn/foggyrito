@@ -61,11 +61,6 @@ label[for="proteins"] {
   grid-column: span 2;
 }
 
-/* #new-form label {
-  grid-column-start: 1;
-  border-radius: 5px;
-} */
-
 #new-form * {
   font-size: 20px;
   padding: 5px;
@@ -160,10 +155,16 @@ thead {
   grid-template-columns: repeat(2, minmax(auto, 20rem));
 }
 
+tbody {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  text-decoration: overline;
+}
+
 tbody tr {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  text-decoration: overline;
+  grid-template-columns: repeat(3, 170px);
+  box-sizing: border-box;
 }
 
 #details {
