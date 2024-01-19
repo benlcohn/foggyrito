@@ -2,7 +2,7 @@
 INSERT DESCRIPTION HERE
 
 # Screenshot
-<img src="images/foggyritoscreenshot.png">
+<img src="planning/foggyritoscreenshot.png">
 
 # Technologies Used
 
