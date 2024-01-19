@@ -1,7 +1,7 @@
 <%- include("../partials/header") %>
 
 <form id="yelp-search" action="/restaurants/search" method="GET">
-<label>Restaurant</label>
+<label>Restaurant:</label>
 <input type="text" name="search">
 <button type="submit">Search</button>
 </form>
@@ -20,20 +20,31 @@
         <input type="hidden" value="<%= restaurant.image_url %>" name="image">
         <% console.log(restaurant.location) %>
     <% } %>
-    
+    <br>
     <label>Neighborhood:</label>
     <select name="neighborhood">
+        <option disabled selected value> -- select an option -- </option>
+        <option value="Bayview/Hunters Point">Bayview/Hunters Point</option>
+        <option value="Bernal Heights">Bernal Heights</option>
+        <option value="Excelsior">Excelsior</option>
+        <option value="Marina">Marina</option>
         <option value="Mission">Mission</option>
+        <option value="Nob Hill">Nob Hill</option>
+        <option value="Noe Valley">Noe Valley</option>
+        <option value="Pacific Heights">Pacific Heights</option>
+        <option value="SOMA/Market">SOMA/Market</option>
+        <option value="Tenderloin">Tenderloin</option>
         <option value="The Richmond">The Richmond</option>
-        <option value="Sunset">Sunset</option>
+        <option value="The Sunset">The Sunset</option>
+        <option value="Western Addition">Western Addition</option>
     </select>
 
     <label for="proteins">Proteins offered:</label>
-    <label for="p1"><input type="checkbox" name="proteins" value="Carne Asada" id="p1">Carne Asada</label>
-    <label for="p2"><input type="checkbox" name="proteins" value="Chicken" id="p2">Chicken</label>
-    <label for="p3"><input type="checkbox" name="proteins" value="Pastor" id="p3">Pastor</label>
-    <label for="p1"><input type="checkbox" name="proteins" value="Carne Asada" id="p1">Carne Asada</label>
-    <label for="p2"><input type="checkbox" name="proteins" value="Chicken" id="p2">Chicken</label>
+    <label for="p1"><input type="checkbox" name="proteins" value="Al Pastor" id="p1">Al Pastor</label>
+    <label for="p2"><input type="checkbox" name="proteins" value="Carnitas" id="p2">Carnitas</label>
+    <label for="p3"><input type="checkbox" name="proteins" value="Carne Asada" id="p3">Carne Asada</label>
+    <label for="p4"><input type="checkbox" name="proteins" value="Chorizo" id="p4">Chorizo</label>
+    <label for="p5"><input type="checkbox" name="proteins" value="Chicken" id="p5">Chicken</label>
     <br>
 
     <label>Do they Super?</label>

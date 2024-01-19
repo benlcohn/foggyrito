@@ -38,7 +38,21 @@ const restaurantSchema = new Schema({
     
     neighborhood: { 
         type: String,
-        enum: ['Mission', 'The Richmond', 'Sunset'],
+        enum: [
+            "Bayview/Hunters Point", 
+            "Bernal Heights",
+            "Excelsior",
+            "Marina",
+            "Mission",
+            "Nob Hill",
+            "Noe Valley",
+            "Pacific Heights",
+            "SOMA/Market",
+            "Tenderloin",
+            "The Richmond",
+            "The Sunset",
+            "Western Addition",
+        ],
         required: true 
     },
 

@@ -33,10 +33,6 @@ body > nav {
   gap: 1rem;
 }
 
-table thead th {
-  padding: 20px;
-}
-
 form {
   width: 100%;
   padding: 12px 20px;
@@ -51,6 +47,8 @@ form {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(auto, 20rem));
+  border: 2px solid rgba(165, 42, 42, 0.778);
+  border-radius: 10px;
   /* grid-template-columns: auto auto; */
 }
 
@@ -74,6 +72,15 @@ label[for="proteins"] {
   border-radius: 5px;
 }
 
+#new-form img {
+  max-width: 90%;
+}
+
+#yelp-search {
+  border: 2px solid rgba(165, 42, 42, 0.778);
+  border-radius: 10px;
+}
+
 input[type=submit] {
   width: 100%;
   background-color: rgba(165, 104, 42, 0.778);
@@ -90,13 +97,14 @@ input[type=submit]:hover {
 }
 
 .splash {
+  border: 5px solid rgba(165, 42, 42, 0.778);
+  border-radius: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-height: 50%;
-  max-width: 50%;
+  max-height: 70%;
+  max-width: 70%;
   opacity: .8;
-  padding: 30px 0 0 0;
   border-radius: 10px;
 }
 
@@ -144,4 +152,20 @@ a {
 #add-review-form textarea {
   width: 60vw;
   height: 10rem;
+}
+
+thead {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 20rem));
+}
+
+tbody tr {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  text-decoration: overline;
+}
+
+#details {
+  color:brown;
 }
